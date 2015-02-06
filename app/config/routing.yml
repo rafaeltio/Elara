@@ -1,3 +1,7 @@
+jupiter_usuarios:
+    resource: "@JupiterUsuariosBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: @AppBundle/Controller/
     type:     annotation

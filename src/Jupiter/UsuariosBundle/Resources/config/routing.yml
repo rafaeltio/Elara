@@ -1,0 +1,3 @@
+jupiter_usuarios_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: JupiterUsuariosBundle:Default:index }
