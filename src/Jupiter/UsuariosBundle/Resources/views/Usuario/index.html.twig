@@ -1,0 +1,69 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Usuario list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Email</th>
+                <th>Respostasecreta</th>
+                <th>Senha</th>
+                <th>Perguntasecreta</th>
+                <th>Prm001</th>
+                <th>Prm002</th>
+                <th>Prm003</th>
+                <th>Prm004</th>
+                <th>Prm005</th>
+                <th>Prm006</th>
+                <th>Prm007</th>
+                <th>Prm008</th>
+                <th>Prm009</th>
+                <th>Prm010</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('usuario_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td>{{ entity.nome }}</td>
+                <td>{{ entity.email }}</td>
+                <td>{{ entity.respostaSecreta }}</td>
+                <td>{{ entity.senha }}</td>
+                <td>{{ entity.perguntaSecreta }}</td>
+                <td>{{ entity.prm001 }}</td>
+                <td>{{ entity.prm002 }}</td>
+                <td>{{ entity.prm003 }}</td>
+                <td>{{ entity.prm004 }}</td>
+                <td>{{ entity.prm005 }}</td>
+                <td>{{ entity.prm006 }}</td>
+                <td>{{ entity.prm007 }}</td>
+                <td>{{ entity.prm008 }}</td>
+                <td>{{ entity.prm009 }}</td>
+                <td>{{ entity.prm010 }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('usuario_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('usuario_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('usuario_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}
